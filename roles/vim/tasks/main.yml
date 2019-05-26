@@ -81,7 +81,7 @@
   unarchive:
     src: "{{ ansible_env.HOME }}/.vim/bundle/phpcomplete/misc/ctags-5.8_better_php_parser.tar.gz"
     dest: "{{ ansible_env.HOME }}/src/"
-  creates: "{{ ansible_env.HOME }}/src/ctags/Makefile.in"
+    creates: "{{ ansible_env.HOME }}/src/ctags/Makefile.in"
 
 - name: Compile Ctags from phpcomplete
   shell: |
@@ -89,6 +89,8 @@
     ./configure
     make -j $(nproc)
     make install
+    make clean
   args:
     chdir: "{{ ansible_env.HOME }}/src/ctags"
+    creates: /usr/local/bin/ctags
   become: yes

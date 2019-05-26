@@ -1,0 +1,14 @@
+---
+
+- name: Install Packages for Tmux
+  apt: pkg="{{ item }}" state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  with_items:
+    - tmux
+    - sudo
+  become: yes
+
+- name: Add .tmux.conf
+  get_url:
+    url: https://raw.githubusercontent.com/jedihe/drupal-dev-vm/provider-docker/dotfiles/.tmux.co
+    dest: "{{ ansible_env.HOME }}/.zshrc"
+    mode: '0660'

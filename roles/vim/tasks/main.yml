@@ -4,6 +4,9 @@
   apt: pkg=vim state=latest update_cache=yes
   become: true
 
+- name: Create the "src" directory
+  file: path="{{ ansible_env.HOME }}/src" state=directory
+
 - name: Create Vim plugins dirs (pathogen
   file: path="{{ item }}" state=directory
   with_items:

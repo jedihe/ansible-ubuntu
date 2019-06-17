@@ -38,6 +38,7 @@
     # - { role: php-pecl, become: true }
     # - { role: php-phar-tools, become: true }
     # - { role: python, become: true }
+    - { role: postman, become: true }
     # - { role: redis, become: true }
     # - { role: rbenv, become: true }
     # - { role: ssh, become: true }

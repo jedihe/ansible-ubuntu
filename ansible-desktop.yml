@@ -84,7 +84,7 @@
     # - { role: remmina, become: true }
     # - { role: ripgrep, become: true }
     # - { role: rofi, become: true }
-    # - { role: shutter, become: true }
+    - { role: shutter, become: true }
     # - { role: sift, become: true }
     # - { role: slop, become: true }
     # - { role: skype, become: true }

@@ -58,6 +58,7 @@
     # - { role: compton, become: true }
     # - { role: copyq, become: true }
     # - { role: dbeaver, become: true }
+    - { role: double-command, become: true }
     # - { role: filezilla, become: true }
     - { role: firefox, become: true }
     # - { role: flatabulous, become: true }

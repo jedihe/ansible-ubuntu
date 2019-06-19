@@ -72,6 +72,7 @@
     # - { role: gdrive, become: true }
     # - { role: geary, become: true }
     - { role: gconf-editor, become: true }
+    - { role: gnome-tweak, become: true }
     - { role: gimp, become: true }
     - { role: gsview, become: true }
     # - { role: grub-customizer, become: true }

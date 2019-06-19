@@ -71,6 +71,7 @@
     # - { role: grub-customizer, become: true }
     # - { role: hubic, become: true }
     # - { role: indicator-sysmonitor, become: true }
+    - { role: imagemagick, become: true }
     # - { role: ksuperkey, become: true }
     - { role: libreoffice, become: true }
     # - { role: maim, become: true }

@@ -92,7 +92,7 @@
     - { role: shutter, become: true }
     # - { role: sift, become: true }
     # - { role: slop, become: true }
-    # - { role: skype, become: true }
+    - { role: skype, become: true }
     # - { role: smartgit, become: true }
     # - { role: spotify, become: true }
     - { role: simple-recorder, become: true }

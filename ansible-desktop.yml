@@ -67,6 +67,7 @@
     - { role: dconf-editor, become: true }
     - { role: double-command, become: true }
     - { role: diffpdf, become: true }
+    - { role: dvdisaster, become: true }
     - { role: filezilla, become: true }
     - { role: firefox, become: true }
     # - { role: flatabulous, become: true }

@@ -91,6 +91,7 @@
     # - { role: notepadqq, become: true }
     # - { role: notify-osd, become: true }
     - { role: pulseaudio, become: true }
+    - { role: qjackctl, become: true }
     # - { role: qutebrowser, become: true }
     # - { role: remarkable, become: true }
     # - { role: remmina, become: true }

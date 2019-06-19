@@ -75,6 +75,7 @@
     - { role: imagemagick, become: true }
     - { role: inkscape, become: true }
     # - { role: ksuperkey, become: true }
+    - { role: kiki, become: true }
     - { role: libreoffice, become: true }
     # - { role: maim, become: true }
     # - { role: min, become: true }

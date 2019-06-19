@@ -77,6 +77,7 @@
     - { role: libreoffice, become: true }
     # - { role: maim, become: true }
     # - { role: min, become: true }
+    - { role: mypaint, become: true }
     # - { role: mysql-workbench, become: true }
     # - { role: nautilus-plugins, become: true }
     # - { role: nemo, become: true }

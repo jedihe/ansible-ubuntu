@@ -63,6 +63,7 @@
     # - { role: compton, become: true }
     # - { role: copyq, become: true }
     # - { role: dbeaver, become: true }
+    - { role: dconf-editor, become: true }
     - { role: double-command, become: true }
     - { role: diffpdf, become: true }
     - { role: filezilla, become: true }

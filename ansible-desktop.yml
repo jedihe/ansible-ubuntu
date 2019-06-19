@@ -127,6 +127,7 @@
     - { role: teamviewer, become: true }
     # - { role: thunderbird, become: true }
     - { role: transmission, become: true }
+    - { role: unetbootin, become: true }
     # - { role: ultra-flat-icons, become: true }
     # - { role: urxvt-perls }
     # - { role: vagrant, become: true }

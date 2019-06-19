@@ -58,6 +58,7 @@
     - { role: brasero, become: true }
     - { role: chrome, become: true }
     - { role: chromium, become: true }
+    - { role: chreese, become: true }
     # - { role: claws-mail, become: true }
     # - { role: compton, become: true }
     # - { role: copyq, become: true }

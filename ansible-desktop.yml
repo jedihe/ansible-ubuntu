@@ -44,6 +44,7 @@
     # - { role: ssh, become: true }
     # Desktop roles
     - { role: audacious, become: true }
+    - { role: audacity, become: true }
     # - { role: desktop, become: true }
     # - { role: desktop-cleanup, become: true }
     # - { role: desktop-autostart, become: true }

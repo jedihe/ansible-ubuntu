@@ -101,6 +101,7 @@
     # - { role: nautilus-plugins, become: true }
     # - { role: nemo, become: true }
     - { role: nvidia, become: true }
+    - { role: netcat, become: true }
     # - { role: notepadqq, become: true }
     # - { role: notify-osd, become: true }
     - { role: pulseaudio, become: true }

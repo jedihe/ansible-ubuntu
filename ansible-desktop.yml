@@ -11,7 +11,7 @@
     - { role: oh-my-zsh }
     - { role: tmux }
     # - { role: dotfiles, become: true }
-    # - { role: java-openjdk, become: true }
+    - { role: java-openjdk, become: true }
     # - { role: phantomjs, become: true }
     # - { role: projects-installer }
     # Server roles

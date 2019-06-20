@@ -70,6 +70,7 @@
     - { role: diffpdf, become: true }
     - { role: dvdisaster, become: true }
     - { role: font-viewer, become: true }
+    - { role: ffmpeg, become: true }
     - { role: filezilla, become: true }
     - { role: firefox, become: true }
     # - { role: flatabulous, become: true }

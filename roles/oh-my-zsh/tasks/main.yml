@@ -21,7 +21,7 @@
   become: yes
 
 - name: Add .zshrc
-  get_url:
-    url: https://raw.githubusercontent.com/jedihe/drupal-dev-vm/provider-docker/dotfiles/.zshrc-supercharged
+  copy:
+    src: zshrc
     dest: "{{ ansible_env.HOME }}/.zshrc"
     mode: '0660'

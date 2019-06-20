@@ -89,6 +89,7 @@
     # - { role: ksuperkey, become: true }
     - { role: kiki, become: true }
     - { role: libreoffice, become: true }
+    - { role: lyx, become: true }
     # - { role: maim, become: true }
     # - { role: min, become: true }
     - { role: meld, become: true }

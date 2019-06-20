@@ -81,6 +81,7 @@
     - { role: gimp, become: true }
     - { role: gsview, become: true }
     - { role: grub-customizer, become: true }
+    - { role: htop, become: true }
     # - { role: hubic, become: true }
     # - { role: indicator-sysmonitor, become: true }
     - { role: imagemagick, become: true }

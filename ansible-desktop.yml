@@ -147,6 +147,7 @@
     # - { role: workrave, become: true }
     - { role: wget, become: true }
     - { role: workbench, become: true }
+    - { role: workday, become: true }
     # - { role: xfce-dockbarx, become: true }
     # - { role: xmind, become: true }
     - { role: xchat, become: true }

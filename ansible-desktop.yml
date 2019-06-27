@@ -62,6 +62,7 @@
     - { role: chrome, become: true }
     - { role: chromium, become: true }
     - { role: cheese, become: true }
+    - { role: classicmenu-indicator , become: true }
     - { role: clipit , become: true }
     - { role: curl, become: true }
     # - { role: claws-mail, become: true }

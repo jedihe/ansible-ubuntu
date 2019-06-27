@@ -134,6 +134,7 @@
     - { role: spe, become: true }
     - { role: soundconverter, become: true }
     - { role: sound-juicer, become: true }
+    - { role: soundswitcher-indicator, become: true }
     - { role: systemload-indicator , become: true }
     - { role: synaptic, become: true }
     # - { role: sublime3, become: true }

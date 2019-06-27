@@ -170,3 +170,6 @@
     # - { role: browsersync }
     # - { role: bower }
     # - { role: webpack }
+
+    # Settings
+    - { role: gnome-settings }

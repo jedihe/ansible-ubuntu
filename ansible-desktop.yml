@@ -173,3 +173,4 @@
 
     # Settings
     - { role: gnome-settings }
+    - { role: gedit }

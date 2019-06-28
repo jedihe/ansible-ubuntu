@@ -55,6 +55,9 @@
     - php
     - php-xml # resolves the error about the missing dom extension
     - automake # used for the ctags version with better php parser
+    - make
+    - gcc
+    - curl
 
 - name: Clone tagbar-phpctags
   git:

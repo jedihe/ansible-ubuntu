@@ -71,7 +71,7 @@
     # - { role: copyq, become: true }
     # - { role: dbeaver, become: true }
     - { role: dconf-editor, become: true }
-    - { role: double-command, become: true }
+    - { role: double-commander, become: true }
     - { role: diffpdf, become: true }
     - { role: dvdisaster, become: true }
     - { role: font-viewer, become: true }
@@ -104,7 +104,7 @@
     - { role: meld, become: true }
     - { role: meterbridge, become: true }
     - { role: mypaint, become: true }
-    # - { role: mysql-workbench, become: true }
+    - { role: mysql-workbench, become: true }
     # - { role: nautilus-plugins, become: true }
     # - { role: nemo, become: true }
     - { role: nvidia, become: true }
@@ -128,7 +128,7 @@
     - { role: slack, become: true }
     # - { role: smartgit, become: true }
     # - { role: spotify, become: true }
-    - { role: simple-recorder, become: true }
+    - { role: simple-screen-recorder, become: true }
     - { role: screenruler, become: true }
     - { role: smplayer, become: true }
     - { role: spe, become: true }
@@ -153,7 +153,6 @@
     # - { role: wine, become: true }
     # - { role: workrave, become: true }
     - { role: wget, become: true }
-    - { role: workbench, become: true }
     - { role: workday, become: true }
     # - { role: xfce-dockbarx, become: true }
     # - { role: xmind, become: true }

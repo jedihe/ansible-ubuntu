@@ -1,0 +1,10 @@
+---
+
+- name: Install Git
+  apt: pkg=git state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+
+- name: Setup default git configuraiton
+  git_config: name="{{ item.name }}" value="{{ item.value }}" scope=global
+  with_items:
+    - {name: "user.name",  value: "John Herreño" }
+    - {name: "user.email", value: "jedihe@gmail.com" }

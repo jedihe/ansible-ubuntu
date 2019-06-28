@@ -4,6 +4,9 @@
   apt: pkg=vim state=latest update_cache=yes
   become: true
 
+- name: Create the "src" directory
+  file: path="{{ ansible_env.HOME }}/src" state=directory
+
 - name: Create Vim plugins dirs (pathogen
   file: path="{{ item }}" state=directory
   with_items:
@@ -41,8 +44,8 @@
     - { repo: "https://github.com/jedihe/tagbar-phpctags.vim", name: tagbar-phpctags }
 
 - name: Add .vimrc
-  get_url:
-    url: https://raw.githubusercontent.com/jedihe/drupal-dev-vm/provider-docker/dotfiles/.vimrc-supercharged
+  copy:
+    src: vimrc
     dest: "{{ ansible_env.HOME }}/.vimrc"
     mode: '0660'
     owner: "{{ ansible_env.USER }}"

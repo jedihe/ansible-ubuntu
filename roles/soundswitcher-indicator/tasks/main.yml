@@ -1,0 +1,7 @@
+---
+
+- name: Configure the Sound Switcher Indicator PPA
+  apt_repository: repo="ppa:yktooo/ppa" state=present update_cache=yes
+
+- name: Install Sound Switcher Indicator
+  apt: name=indicator-sound-switcher state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

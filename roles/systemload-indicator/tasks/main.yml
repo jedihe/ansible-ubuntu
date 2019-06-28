@@ -1,0 +1,4 @@
+---
+
+- name: Install System Load Indicator
+  apt: pkg=gnome-shell-extension-system-monitor state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

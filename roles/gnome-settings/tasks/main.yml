@@ -24,11 +24,6 @@
     key: "/org/gnome/desktop/wm/keybindings/begin-move"
     value: "['<Super>']"
 
-- name: Set 'Faenza' icon theme.
-  dconf:
-    key: "/org/gnome/desktop/interface/icon-theme"
-    value: "'Faenza'"
-
 - name: Enable 'system-monitor' extension.
   dconf:
     key: "/org/gnome/shell/enabled-extensions"

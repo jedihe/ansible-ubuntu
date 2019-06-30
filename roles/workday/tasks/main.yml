@@ -1,7 +1,7 @@
 ---
 
 - name: Install required packages
-  apt: pkg="{{ item }}" state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
   with_items:
     - python2.7
     - python-gtk2
@@ -9,13 +9,14 @@
     - libcanberra-gtk3-module
     - python-appindicator
     - gnome-shell-extension-top-icons-plus
+  become: true
 
-- name: Clone my own Workday
+- name: Clone Workday
   git:
     repo: "https://github.com/jedihe/workday.git"
     dest: "{{ ansible_env.HOME }}/src/workday"
     update: yes
     accept_hostkey: yes
 
-- name: Changing perm of "ansible.py", adding "+x"
+- name: Make workday.py executable
   file: dest={{ ansible_env.HOME }}/src/workday/workday.py mode=a+x

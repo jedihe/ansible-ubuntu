@@ -8,7 +8,9 @@
   become: yes
 
 - name: Add .tmux.conf
-  get_url:
-    url: https://raw.githubusercontent.com/jedihe/drupal-dev-vm/provider-docker/dotfiles/.tmux.co
-    dest: "{{ ansible_env.HOME }}/.zshrc"
+  copy:
+    src: tmux.conf
+    dest: "{{ ansible_env.HOME }}/.tmux.conf"
     mode: '0660'
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"

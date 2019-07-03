@@ -12,7 +12,7 @@
 - name: Set buttons on top-left.
   dconf:
     key: "/org/gnome/desktop/wm/preferences/button-layout"
-    value: "':minimize,maximize,close'"
+    value: "'close,minimize,maximize:'"
 
 - name: Set Shift+Windows to show all apps grid.
   dconf:

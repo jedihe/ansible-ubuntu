@@ -22,6 +22,9 @@
     - { id: 1082, name: "cpufreq - konkor" }
     - { id: 750, name: "Open Weather" }
     - { id: 906, name: "Sound Input & Output Device Chooser" }
+    - { id: 1031, name: "Top Icons Plus" }
+    - { id: 1446, name: "Transparent Window Moving" }
+    - { id: 1485, name: "Workspace Matrix" }
 
 - name: Configure Gnome Shell extensions
   dconf:
@@ -34,6 +37,7 @@
     - { key: "/org/gnome/shell/extensions/openweather/unit", value: "'celsius'" }
     - { key: "/org/gnome/shell/extensions/openweather/pressure-unit", value: "'mmHg'" }
     - { key: "/org/gnome/shell/extensions/openweather/wind-speed-unit", value: "'kph'" }
+    - { key: "/org/gnome/shell/extensions/transparent-window-moving/transition-time", value: "0.25" }
 
 - name: Signal that extensions are already installed
   shell: |

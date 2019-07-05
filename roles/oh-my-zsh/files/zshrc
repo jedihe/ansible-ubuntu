@@ -5,8 +5,8 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="kolo"
-ZSH_THEME="gallois"
+ZSH_THEME="kolo"
+#ZSH_THEME="gallois"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -46,13 +46,13 @@ ZSH_THEME="gallois"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git nyan)
+plugins=(git docker)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/common/bin"
 export LANG="en_US.UTF-8"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -74,13 +74,22 @@ function __grepless() {
 }
 alias grepless='__grepless'
 
-function __glog() {
-  git log --graph --oneline --decorate --color $@
-}
-alias glog='__glog'
-alias gloga='glog --all'
+#function __testrunner() {
+#  /vagrant/tools/testrunner.sh $@
+#}
+#alias testrunner='__testrunner'
 
-function __testrunner() {
-  /vagrant/tools/testrunner.sh $@
+function __workday_compile() {
+  for file in workday*; do echo "file $file" >> file-list.txt; done
+  ffmpeg -f concat -i file-list.txt -codec copy $@
+  rm file-list.txt
 }
-alias testrunner='__testrunner'
+alias workday_compile='__workday_compile'
+
+function __ffmpeg_compress() {
+  ffmpeg -i $1 -vcodec libx264 -b $2 -acodec libmp3lame -ar 22050 -ab 48000 web-$1
+}
+alias quickvideocompress='__ffmpeg_compress'
+
+# Quick helper to find out the current branch deployed in a project whose git working-dir is nested under the project root.
+alias catgitHEAD='ls | grep -q www && DEPLOY_DIR=$(ls www | grep project-2019- | tail -n 1) && cat www/$DEPLOY_DIR/path/to/subdir/.git/HEAD'

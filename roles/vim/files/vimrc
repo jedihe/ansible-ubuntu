@@ -23,6 +23,9 @@ set listchars=tab:▸-,trail:✖
 highlight SpecialKey ctermfg=Black
 highlight NonText ctermfg=Black
 
+" Sudo to write
+cmap w!! w !sudo tee % >/dev/null
+
 "allow deleting selection without "updating" the clipboard (yank buffer)
 vnoremap x "_x
 vnoremap X "_X
@@ -93,6 +96,7 @@ au BufNewFile,BufRead *.profile set filetype=php
 "Quick edit/sourcing of personal .vimrc
 :nmap <leader>.v        :e $MYVIMRC<CR>
 :nmap <leader>sv        :source $MYVIMRC<CR>
+:nmap <leader>.z        :e ~/.zshrc<CR>
 
 " ==================================================
 " Shortcuts for the surroundings plugin functionality

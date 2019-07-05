@@ -138,7 +138,6 @@
     - { role: spe, become: true }
     - { role: soundconverter, become: true }
     - { role: sound-juicer, become: true }
-    - { role: soundswitcher-indicator, become: true }
     - { role: startup }
     - { role: system-monitor-extension }
     - { role: synaptic, become: true }

@@ -1,5 +1,9 @@
 ---
 
+- name: Install connector for in-browser management
+  apt: pkg=chrome-gnome-shell state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  become: true
+
 - name: Copy auto-installer script to home dir
   copy:
     src: gnomeshell-extension-manage.sh

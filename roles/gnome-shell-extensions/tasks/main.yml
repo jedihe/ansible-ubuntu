@@ -21,6 +21,7 @@
     - { id: 517, name: "Caffeine" }
     - { id: 1082, name: "cpufreq - konkor" }
     - { id: 750, name: "Open Weather" }
+    - { id: 906, name: "Sound Input & Output Device Chooser" }
 
 - name: Configure Gnome Shell extensions
   dconf:

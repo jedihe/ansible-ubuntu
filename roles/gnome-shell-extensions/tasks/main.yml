@@ -1,0 +1,30 @@
+---
+
+- name: Copy auto-installer script to home dir
+  copy:
+    src: gnomeshell-extension-manage.sh
+    dest: "{{ ansible_env.HOME }}/gnomeshell-extension-manage.sh"
+    mode: "0770"
+
+- name: Install Gnome shell extensions
+  shell: |
+    ./gnomeshell-extension-manage.sh --install --extension-id {{ item.id }}
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+    creates: "{{ ansible_env.HOME }}/.extensions-installed-lock"
+  with_items:
+    - { id: 841, version: 34, name: "Freon" }
+
+- name: Configure Gnome Shell extensions
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items:
+    - { key: "/org/gnome/shell/extensions/freon/position-in-panel", value: "'left'" }
+
+- name: Signal that extensions are already installed
+  shell: |
+    touch .extensions-installed-lock
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+    creates: "{{ ansible_env.HOME }}/.extensions-installed-lock"

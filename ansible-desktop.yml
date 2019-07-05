@@ -84,6 +84,7 @@
     # - { role: geary, become: true }
     - { role: gconf-editor, become: true }
     - { role: gparted, become: true }
+    - { role: gnome-shell-extensions }
     - { role: gnome-system-tools, become: true }
     - { role: gnome-tweak, become: true }
     - { role: gimp, become: true }

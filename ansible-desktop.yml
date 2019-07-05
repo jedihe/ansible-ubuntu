@@ -174,4 +174,5 @@
 
     # Settings
     - { role: gnome-settings }
+    - { role: gnome-system-tools, become: true }
     - { role: gedit }

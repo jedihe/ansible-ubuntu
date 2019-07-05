@@ -1,4 +1,4 @@
 ---
 
-- name: Install Caffeine 
+- name: Install Caffeine
   apt: pkg=caffeine state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

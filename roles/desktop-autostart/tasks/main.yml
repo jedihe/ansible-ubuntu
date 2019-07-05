@@ -13,3 +13,4 @@
     - { name: "Psensor", exec: "psensor" }
     - { name: "Workday", exec: "{{ ansible_env.HOME }}/src/workday/workday.py" }
     - { name: "Caffeine", exec: "caffeine-indicator" }
+    - { name: "Startup.sh", exec: "{{ ansible_env.HOME }}/startup.sh" }

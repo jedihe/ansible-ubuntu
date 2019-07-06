@@ -23,8 +23,3 @@
   dconf:
     key: "/org/gnome/desktop/wm/keybindings/begin-move"
     value: "['<Super>']"
-
-- name: Enable 'system-monitor' extension.
-  dconf:
-    key: "/org/gnome/shell/enabled-extensions"
-    value: "['system-monitor@paradoxxx.zero.gmail.com']"

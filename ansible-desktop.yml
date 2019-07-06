@@ -117,7 +117,7 @@
     - { role: pavumeter, become: true }
     - { role: pulseaudio, become: true }
     - { role: pulseaudio-equalizer, become: true }
-    - { role: psensor , become: true }
+#    - { role: psensor , become: true }
     - { role: qjackctl, become: true }
     # - { role: qutebrowser, become: true }
     # - { role: remarkable, become: true }

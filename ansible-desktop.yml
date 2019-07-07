@@ -104,6 +104,7 @@
     - { role: lyx, become: true }
     # - { role: maim, become: true }
     # - { role: min, become: true }
+    - { role: marblemouse, become: true }
     - { role: meld, become: true }
     - { role: meterbridge, become: true }
     - { role: mypaint, become: true }

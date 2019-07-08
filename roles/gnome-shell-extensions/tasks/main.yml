@@ -29,6 +29,7 @@
     - { id: 355, name: "Status Area Horizontal Spacing" }
     - { id: 884, name: "Disper Menu" } # Multi-monitor setup switching
     - { id: 1683, name: "Draw On Your Screen" }
+    - { id: 921, name: "Multi Monitos Add-On" }
 
 - name: Configure Gnome Shell extensions
   dconf:

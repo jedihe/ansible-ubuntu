@@ -59,6 +59,7 @@
     - { role: blender, become: true }
     - { role: bleachbit, become: true }
     - { role: brasero, become: true }
+    - { role: brave-browser, become: true }
     - { role: caffeine , become: true }
     - { role: chrome, become: true }
     - { role: chromium, become: true }

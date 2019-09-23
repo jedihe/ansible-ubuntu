@@ -93,6 +93,7 @@
     - { role: git }
     - { role: gsview, become: true }
     - { role: grub-customizer, become: true }
+    - { role: hardware-ssd, become: true }
     - { role: htop, become: true }
     # - { role: hubic, become: true }
     # - { role: indicator-sysmonitor, become: true }

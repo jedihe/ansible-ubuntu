@@ -95,4 +95,4 @@ alias quickvideocompress='__ffmpeg_compress'
 alias catgitHEAD='ls | grep -q www && DEPLOY_DIR=$(ls www | grep project-2019- | tail -n 1) && cat www/$DEPLOY_DIR/path/to/subdir/.git/HEAD'
 
 # Simple probe for SSD drive, to query TBW (requires enabling hardware-ssd Ansible role)
-alias ssdtbw='/usr/sbin/smartctl -A /dev/sdb | awk '$0~/LBAs/{ printf "TBW %.1f (max: 150TBW)\n", $10 * 512 / 1024^4 }''
+alias ssdtbw="sudo /usr/sbin/smartctl -A /dev/sdb | awk '\$0~/LBAs/{ printf \"TBW %.1f (max: 150TBW)\n\", \$10 * 512 / 1024^4 }'"

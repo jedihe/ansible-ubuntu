@@ -94,5 +94,5 @@ alias quickvideocompress='__ffmpeg_compress'
 # Quick helper to find out the current branch deployed in a project whose git working-dir is nested under the project root.
 alias catgitHEAD='ls | grep -q www && DEPLOY_DIR=$(ls www | grep project-2019- | tail -n 1) && cat www/$DEPLOY_DIR/path/to/subdir/.git/HEAD'
 
-# Simple probe for SSD drive, to query TBW (requires enabling hardware-ssd Ansible role)
+# Simple probe for SSD drive, to query TBW (requires enabling hardware-ssd Ansible role). One-liner taken from https://askubuntu.com/a/1121966
 alias ssdtbw="sudo /usr/sbin/smartctl -A /dev/sdb | awk '\$0~/LBAs/{ printf \"TBW %.1f (max: 150TBW)\n\", \$10 * 512 / 1024^4 }'"

@@ -99,6 +99,7 @@
     # - { role: indicator-sysmonitor, become: true }
     - { role: imagemagick, become: true }
     - { role: inkscape, become: true }
+    - { role: inotifytools, become: true }
     - { role: jackeq, become: true }
     - { role: jkmeter, become: true }
     # - { role: ksuperkey, become: true }

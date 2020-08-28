@@ -9,7 +9,7 @@
     - apt-transport-https
 
 - name: Add Brave Browser repository
-  apt_repository: repo="deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ {{ansible_distribution_release}} main"
+  apt_repository: repo="deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ bionic main"
 
 - name: Install Brave Browser
   apt: name="{{ item }}" state=present update_cache=yes

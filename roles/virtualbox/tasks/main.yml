@@ -3,5 +3,12 @@
 - name: Install VirtualBox
   apt: pkg=virtualbox state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
 
+- name: Accept VBox Ext Pack License
+  debconf:
+    name: virtualbox-ext-pack
+    question: virtualbox-ext-pack/license
+    value: "true"
+    vtype: select
+
 - name: Install VirtualBox Extension Pack
   apt: pkg=virtualbox-ext-pack state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

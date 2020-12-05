@@ -1,7 +1,8 @@
 ---
 
-- name: Configure the Grub Customizer PPA
-  apt_repository: repo="ppa:danielrichter2007/grub-customizer" state=present update_cache=yes
+# PPA is not needed in 20.04
+#- name: Configure the Grub Customizer PPA
+#  apt_repository: repo="ppa:danielrichter2007/grub-customizer" state=present update_cache=yes
 
 - name: Install Grub Customizer
   apt: pkg=grub-customizer state=present

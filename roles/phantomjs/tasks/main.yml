@@ -4,13 +4,16 @@
   apt: name=phantomjs state=absent purge=yes
 
 - name: Install PhantomJS dependencies
-  apt: name={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
-  with_items:
-    - fontconfig
-    - libfontconfig1
-    - libssl1.0.0
-    - zlib1g
-    - lib32z1
+  apt:
+    state: latest
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
+    pkg:
+      - fontconfig
+      - libfontconfig1
+      - libssl1.0.0
+      - zlib1g
+      - lib32z1
 
 - name: Check PhantomJS version
   command: "phantomjs --version"

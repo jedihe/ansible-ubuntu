@@ -1,9 +1,12 @@
 ---
 
 - name: Install Rbenv dependencies
-  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
-  with_items:
-    - libreadline-dev
+  apt:
+    state: latest
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
+    pkg:
+      - libreadline-dev
 
 - name: Installs Rbenv
   git: repo=https://github.com/sstephenson/rbenv.git dest={{ ansible_env.HOME }}/.rbenv accept_hostkey=true

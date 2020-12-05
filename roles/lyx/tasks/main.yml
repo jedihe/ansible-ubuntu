@@ -8,7 +8,10 @@
 
   # These packages are the easiest way I found to get the APA6 document class properly set-up for LyX.
 - name: Install Tex Live Publishers + BibTex Publishers
-  apt: name={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
-  with_items:
-    - texlive-publishers
-    - texlive-bibtex-extra
+  apt:
+    state: latest
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
+    pkg:
+      - texlive-publishers
+      - texlive-bibtex-extra

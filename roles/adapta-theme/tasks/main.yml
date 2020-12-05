@@ -3,12 +3,14 @@
 # Clean theme with sudo rm -rf /usr/share/themes/{Adapta,Adapta-Nokto}
 
 - name: Install autoconf and automake
-  apt: pkg={{ item }} state=latest cache_valid_time={{ aptcachetime }}
-  with_items:
-    - autoconf
-    - automake
-    - gtk2-engines-murrine
-    - gnome-themes-standard
+  apt:
+    state: latest
+    cache_valid_time: "{{ aptcachetime }}"
+    pkg:
+      - autoconf
+      - automake
+      - gtk2-engines-murrine
+      - gnome-themes-standard
 
 - name: Install Adapta-Theme
   git: repo=https://github.com/tista500/Adapta/ dest="{{ ansible_env.HOME }}/.cache/adapta-theme" update=yes accept_hostkey=yes

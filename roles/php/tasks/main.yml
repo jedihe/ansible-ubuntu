@@ -3,40 +3,41 @@
   apt_repository: repo="ppa:ondrej/php" state=present
 
 - name: Install PHP 5.6 and PHP 7.0
-  apt: name={{item}} state=latest
-  with_items:
-    - php5.6
-    - php7.0
-    - php5.6-common
-    - php7.0-common
-    - php5.6-fpm
-    - php7.0-fpm
-    - php5.6-mysql
-    - php7.0-mysql
-    - php5.6-mcrypt
-    - php7.0-mcrypt
-    - php5.6-mbstring
-    - php7.0-mbstring
-    - php5.6-json
-    - php7.0-json
-    - php5.6-curl
-    - php7.0-curl
-    - php5.6-gd
-    - php7.0-gd
-    - php5.6-intl
-    - php7.0-intl
-    - php5.6-cli
-    - php7.0-cli
-    - php5.6-xml
-    - php7.0-xml
-    - php5.6-bz2
-    - php7.0-bz2
-    - mcrypt
-    - openssl
-    - php-imagick
-    - php-memcached
-    - php-redis
-    - php-xdebug
+  apt:
+    state: latest
+    pkg:
+      - php5.6
+      - php7.0
+      - php5.6-common
+      - php7.0-common
+      - php5.6-fpm
+      - php7.0-fpm
+      - php5.6-mysql
+      - php7.0-mysql
+      - php5.6-mcrypt
+      - php7.0-mcrypt
+      - php5.6-mbstring
+      - php7.0-mbstring
+      - php5.6-json
+      - php7.0-json
+      - php5.6-curl
+      - php7.0-curl
+      - php5.6-gd
+      - php7.0-gd
+      - php5.6-intl
+      - php7.0-intl
+      - php5.6-cli
+      - php7.0-cli
+      - php5.6-xml
+      - php7.0-xml
+      - php5.6-bz2
+      - php7.0-bz2
+      - mcrypt
+      - openssl
+      - php-imagick
+      - php-memcached
+      - php-redis
+      - php-xdebug
 
 - name: Configure PHP 5.6 settings
   lineinfile: dest=/etc/php/5.6/cli/php.ini regexp="^{{ item.param }} =" line="{{ item.param }} = {{ item.value }}"

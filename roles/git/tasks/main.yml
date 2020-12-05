@@ -1,10 +1,13 @@
 ---
 
 - name: Install Git + Related packages
-  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
-  with_items:
-    - git
-    - gitk
+  apt:
+    state: latest
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
+    pkg:
+      - git
+      - gitk
   become: true
 
 - name: Setup default git configuraiton

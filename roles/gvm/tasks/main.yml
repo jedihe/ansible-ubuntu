@@ -1,16 +1,19 @@
 ---
 
 - name: Install GVM dependencies
-  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
-  with_items:
-    - curl
-    - git
-    - mercurial
-    - make
-    - binutils
-    - bison
-    - gcc
-    - build-essential
+  apt:
+    state: latest
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
+    pkg:
+      - curl
+      - git
+      - mercurial
+      - make
+      - binutils
+      - bison
+      - gcc
+      - build-essential
 
 - name: Download GVM
   get_url: url="https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer" dest="/tmp/gvm-installer" mode=0755

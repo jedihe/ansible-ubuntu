@@ -1,27 +1,31 @@
 ---
 
 - name: Ensure Unity MediaScanner is removed (useless + cause high CPU peaks)
-  apt: pkg={{ item }} purge=yes state=absent
-  with_items:
-    - mediascanner2.0
-    - libmediascanner-2.0-0
+  apt:
+    purge: yes
+    state: absent
+    pkg:
+      - mediascanner2.0
+      - libmediascanner-2.0-0
 
 - name: Remove Amazon and others Unity shits
-  apt: pkg={{ item }} purge=yes state=absent
-  with_items:
-    - unity-lens-shopping
-    - unity-scope-video-remote
-    - unity-scope-musicstores
-    - unity-scope-gdrive
-    - unity-scope-gmusicbrowser
-    - unity-scope-gourmet
-    - unity-scope-guayadeque
-    - unity-scope-musicstores
-    - unity-scope-musique
-    - unity-scope-googlenews
-    - unity-scope-launchpad
-    - unity-scope-onlinemusic
-    - unity-scope-yahoostock
+  apt:
+    purge: yes
+    state: absent
+    pkg:
+      - unity-lens-shopping
+      - unity-scope-video-remote
+      - unity-scope-musicstores
+      - unity-scope-gdrive
+      - unity-scope-gmusicbrowser
+      - unity-scope-gourmet
+      - unity-scope-guayadeque
+      - unity-scope-musicstores
+      - unity-scope-musique
+      - unity-scope-googlenews
+      - unity-scope-launchpad
+      - unity-scope-onlinemusic
+      - unity-scope-yahoostock
 
 - name: Remove shitty Amazon shortcut
   file: path=/usr/share/applications/ubuntu-amazon-default.desktop force=yes state=absent

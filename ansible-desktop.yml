@@ -103,7 +103,7 @@
     - { role: jackeq, become: true }
     - { role: jkmeter, become: true }
     # - { role: ksuperkey, become: true }
-    - { role: kiki, become: true }
+    # - { role: kiki, become: true }
     - { role: libreoffice, become: true }
     - { role: lyx, become: true }
     # - { role: maim, become: true }

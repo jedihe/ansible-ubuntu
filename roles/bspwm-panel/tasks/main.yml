@@ -6,19 +6,21 @@
   become_user: "{{ ansible_env.USER }}"
 
 - name: Install build dependencies
-  apt: pkg="{{ item }}" state=latest
-  with_items:
-    - libasound2-dev
-    - libxcb-xtest0-dev
-    - libxft-dev
-    - libx11-xcb-dev
+  apt:
+    state: latest
+    pkg:
+      - libasound2-dev
+      - libxcb-xtest0-dev
+      - libxft-dev
+      - libx11-xcb-dev
 
 - name: Install dependencies
-  apt: pkg="{{ item }}" state=latest
-  with_items:
-    - conky-cli
-    - fonts-font-awesome
-    - ttf-ubuntu-font-family
+  apt:
+    state: latest
+    pkg:
+      - conky-cli
+      - fonts-font-awesome
+      - ttf-ubuntu-font-family
 
 - name: Make xdo
   command: make

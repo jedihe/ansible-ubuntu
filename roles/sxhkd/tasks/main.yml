@@ -6,11 +6,12 @@
   become_user: "{{ ansible_env.USER }}"
 
 - name: Install build dependencies
-  apt: pkg="{{ item }}" state=latest
-  with_items:
-    - build-essential
-    - libxcb-util0-dev
-    - libxcb-keysyms1-dev
+  apt:
+    state: latest
+    pkg:
+      - build-essential
+      - libxcb-util0-dev
+      - libxcb-keysyms1-dev
 
 - name: Make
   command: make

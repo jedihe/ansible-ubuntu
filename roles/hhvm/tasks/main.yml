@@ -7,11 +7,13 @@
   apt_repository: repo='deb http://dl.hhvm.com/ubuntu {{ ansible_distribution_release }} main' state=present
 
 - name: Install HHVM packages
-  apt: pkg={{ item }} state=latest update_cache=yes
-  with_items:
-      - hhvm
-      - libgmp-dev
-      - libmemcached-dev
+  apt:
+    state: latest
+    update_cache: yes
+    pkg:
+        - hhvm
+        - libgmp-dev
+        - libmemcached-dev
 
 - name: Configure HHVM user and group
   lineinfile: dest=/etc/default/hhvm regexp="^#?{{ item.param }}=" line='{{ item.param }}="{{ item.value }}"'

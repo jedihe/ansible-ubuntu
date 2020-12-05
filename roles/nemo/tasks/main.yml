@@ -4,10 +4,11 @@
   apt_repository: repo="ppa:webupd8team/nemo" state=present
 
 - name: Install Nemo
-  apt: pkg="{{ item }}" state=latest
-  with_items:
-    - nemo
-    - nemo-rabbitvcs
+  apt:
+    state: latest
+    pkg:
+      - nemo
+      - nemo-rabbitvcs
 
 - name: Set Nemo preferences
   command: "{{ item }}"

@@ -52,15 +52,16 @@
     group: "{{ ansible_env.USER }}"
 
 - name: Install required tools for building phpctags
-  apt: pkg="{{ item }}" state=latest
+  apt:
+    state: latest
+    pkg:
+      - php
+      - php-xml # resolves the error about the missing dom extension
+      - automake # used for the ctags version with better php parser
+      - make
+      - gcc
+      - curl
   become: true
-  with_items:
-    - php
-    - php-xml # resolves the error about the missing dom extension
-    - automake # used for the ctags version with better php parser
-    - make
-    - gcc
-    - curl
 
 - name: Clone tagbar-phpctags
   git:

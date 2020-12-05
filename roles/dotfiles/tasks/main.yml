@@ -1,13 +1,16 @@
 ---
 
 - name: Install dotfiles dependencies with APT
-  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
-  with_items:
-    - pwgen
-    - imagemagick
-    - libav-tools
-    - cowsay
-    - fortune
+  apt:
+    state: latest
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
+    pkg:
+      - pwgen
+      - imagemagick
+      - libav-tools
+      - cowsay
+      - fortune
 
 - name: Install dotfiles dependencies with Python PIP
   pip: name={{ item }} state=latest

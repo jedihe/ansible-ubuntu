@@ -7,27 +7,28 @@
   git: repo=https://github.com/DaveDavenport/rofi.git dest="{{ ansible_env.HOME }}/.cache/install/rofi" update=yes accept_hostkey=yes
 
 - name: Install build dependencies
-  apt: pkg="{{ item }}" state=latest
-  with_items:
-    - build-essential
-    - autoconf
-    - automake
-    - make
-    - libtool
-    - xcb
-    - xutils-dev
-    - libpango1.0-dev
-    - libcairo2-dev
-    - libstartup-notification0-dev
-    - libxcb-icccm4-dev
-    - libxcb-randr0-dev
-    - libxcb-util0-dev
-    - libxcb-xinerama0-dev
-    - libxcb-xkb-dev
-    - libxcb1-dev
-    - libxkbcommon-dev
-    - libxkbcommon-x11-dev
-    - libxcb-ewmh-dev
+  apt:
+    state: latest
+    pkg:
+      - build-essential
+      - autoconf
+      - automake
+      - make
+      - libtool
+      - xcb
+      - xutils-dev
+      - libpango1.0-dev
+      - libcairo2-dev
+      - libstartup-notification0-dev
+      - libxcb-icccm4-dev
+      - libxcb-randr0-dev
+      - libxcb-util0-dev
+      - libxcb-xinerama0-dev
+      - libxcb-xkb-dev
+      - libxcb1-dev
+      - libxkbcommon-dev
+      - libxkbcommon-x11-dev
+      - libxcb-ewmh-dev
 
 - name: Autogen xcb-util-xrm
   command: ./autogen.sh --prefix=/usr

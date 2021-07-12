@@ -158,6 +158,7 @@
     # - { role: vagrant, become: true }
     - { role: virtualbox, become: true }
     - { role: vlc, become: true }
+    - { role: syncthing, become: true }
     # - { role: vokoscreen, become: true }
     # - { role: wine, become: true }
     # - { role: workrave, become: true }

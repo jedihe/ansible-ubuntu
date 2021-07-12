@@ -1,0 +1,64 @@
+# Copied and adapted from https://github.com/LearnLinuxTV/personal_ansible_desktop_configs/blob/main/roles/workstation/tasks/software/syncthing.yml
+
+# syncthing repository for debian and ubuntu
+- name: Add apt key for syncthing
+  apt_key:
+    url: https://syncthing.net/release-key.txt
+    state: present
+  become: true
+
+- name: Add apt repository for syncthing
+  apt_repository:
+    repo: deb https://apt.syncthing.net/ syncthing stable
+    state: present
+    filename: syncthing
+  become: true
+
+- name: Install syncthing packages
+  package:
+    name:
+      - syncthing
+      #- syncthing-gtk
+    state: latest
+
+# Enable and start syncthing
+# Note: Not using systemd module because it triggers a dbus error due to no session while user is not logged in
+- name: Start and enable syncthing
+  command: "{{ item }}"
+  with_items:
+    - systemctl enable syncthing@{{ ansible_env.USER }}
+    - systemctl restart syncthing@{{ ansible_env.USER }}
+
+# Adjust configuration file
+- name: Pause to ensure config file exists
+  wait_for:
+    path: /home/{{ ansible_env.USER }}/.config/syncthing/config.xml
+    delay: 10
+
+- name: Syncthing config.xml - disable browser
+  replace:
+    path: /home/{{ ansible_env.USER }}/.config/syncthing/config.xml
+    regexp: "<startBrowser>true</startBrowser>"
+    replace: "<startBrowser>false</startBrowser>"
+
+- name: Syncthing config.xml - set ui theme
+  replace:
+    path: /home/{{ ansible_env.USER }}/.config/syncthing/config.xml
+    regexp: "<theme>default</theme>"
+    replace: "<theme>dark</theme>"
+
+- name: Remove default sync directory (~/Sync) from host
+  file:
+    path: /home/{{ ansible_env.USER }}/Sync
+    state: absent
+
+- name: Increase inotify max user watches
+  copy:
+    src: 70-syncthing-watchers.conf
+    dest: "/etc/sysctl.d/70-syncthing-watchers.conf"
+    mode: '0644'
+  become: true
+
+- name: Restart systemd - apply new max watchers
+  command: "sysctl -p --system"
+  become: true

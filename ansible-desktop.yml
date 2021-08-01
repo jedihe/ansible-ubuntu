@@ -100,8 +100,8 @@
     - { role: imagemagick, become: true }
     - { role: inkscape, become: true }
     - { role: inotifytools, become: true }
-    - { role: jackeq, become: true }
-    - { role: jkmeter, become: true }
+#    - { role: jackeq, become: true }
+#    - { role: jkmeter, become: true }
     # - { role: ksuperkey, become: true }
     - { role: kiki, become: true }
     - { role: libreoffice, become: true }
@@ -123,7 +123,7 @@
     - { role: pulseaudio, become: true }
     - { role: pulseaudio-equalizer, become: true }
 #    - { role: psensor , become: true }
-    - { role: qjackctl, become: true }
+#    - { role: qjackctl, become: true }
     # - { role: qutebrowser, become: true }
     # - { role: remarkable, become: true }
     # - { role: remmina, become: true }

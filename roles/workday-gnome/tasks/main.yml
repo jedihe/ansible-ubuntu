@@ -11,12 +11,12 @@
     - gnome-shell-extension-top-icons-plus
   become: true
 
-- name: Clone Workday
+- name: Clone Workday-Gnome
   git:
-    repo: "https://github.com/jedihe/workday.git"
-    dest: "{{ ansible_env.HOME }}/src/workday"
+    repo: "https://github.com/jedihe/workday-gnome.git"
+    dest: "{{ ansible_env.HOME }}/src/workday-gnome"
     update: yes
     accept_hostkey: yes
 
 - name: Make workday.py executable
-  file: dest={{ ansible_env.HOME }}/src/workday/workday.py mode=a+x
+  file: dest={{ ansible_env.HOME }}/src/workday-gnome/workday.py mode=a+x

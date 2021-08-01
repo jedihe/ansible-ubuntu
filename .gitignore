@@ -3,3 +3,4 @@ group_vars/_*.yml
 
 *.swp
 *.swo
+*~

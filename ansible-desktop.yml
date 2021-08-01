@@ -169,6 +169,7 @@
     # - { role: xmind, become: true }
     - { role: xchat, become: true }
     - { role: youtube-dl, become: true }
+    - { role: obs, become: true }
     - { role: 7zip, become: true }
     # bspwm
     # - { role: sxhkd, become: true }

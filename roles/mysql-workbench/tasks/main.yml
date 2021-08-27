@@ -1,7 +1,7 @@
 ---
 
 - name: Configure official mysql repo
-  apt: deb="https://dev.mysql.com/get/mysql-apt-config_0.8.16-1_all.deb"
+  apt: deb="https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb" update_cache=yes
 
 - name: Install Workbench Community
   apt: pkg=mysql-workbench-community state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

@@ -1,7 +1,25 @@
 ---
 
+- name: Set distro distro for mysql-apt-config
+  debconf:
+    name: mysql-apt-config
+    question: "mysql-apt-config/{{ item.question_suffix }}"
+    value: "{{  item.value }}"
+    vtype: "{{ item.type }}"
+  with_items:
+    - { question_suffix: 'repo-distro', type: 'select', value: 'ubuntu' }
+    - { question_suffix: 'repo-codename', type: 'select', value: 'focal' }
+    - { question_suffix: 'select-tools', type: 'select', value: 'Enabled' }
+    - { question_suffix: 'select-product', type: 'select', value: 'Ok' }
+    - { question_suffix: 'select-preview', type: 'select', value: 'Disabled' }
+    - { question_suffix: 'unsupported-platform', type: 'select', value: 'ubuntu focal' }
+    - { question_suffix: 'select-server', type: 'select', value: 'mysql-8.0' }
+    - { question_suffix: 'preview-component', type: 'string', value: '' }
+    - { question_suffix: 'tools-component', type: 'string', value: 'mysql-tools' }
+    - { question_suffix: 'repo-url', type: 'string', value: 'http://repo.mysql.com/apt' }
+
 - name: Configure official mysql repo
-  apt: deb="https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb" update_cache=yes
+  apt: deb="https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb"
 
 - name: Install Workbench Community
   apt: pkg=mysql-workbench-community state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

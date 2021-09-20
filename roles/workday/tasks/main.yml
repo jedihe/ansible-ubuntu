@@ -1,12 +1,15 @@
 ---
 
 - name: Install required packages
-  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
-  with_items:
-    - elementary-sdk
-    - libgstreamer1.0-dev
-    - libclutter-gtk-1.0-dev
-    - libclutter-gst-3.0-dev
+  apt:
+    state: latest
+    update_cache: yes
+    cache_valid_time: {{ aptcachetime }}
+    pkg:
+      - elementary-sdk
+      - libgstreamer1.0-dev
+      - libclutter-gtk-1.0-dev
+      - libclutter-gst-3.0-dev
   become: true
 
 - name: Clone Workday

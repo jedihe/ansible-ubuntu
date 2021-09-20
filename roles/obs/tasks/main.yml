@@ -1,10 +1,12 @@
 ---
 
 - name: Install required packages
-  apt: name="{{ item }}" state=present update_cache=yes
-  with_items:
-    - ffmpeg
-    - v4l2loopback-dkms
+  apt:
+    state: present
+    update_cache: yes
+    pkg:
+      - ffmpeg
+      - v4l2loopback-dkms
 
 - name: Add OBS-Studio repository
   apt_repository:

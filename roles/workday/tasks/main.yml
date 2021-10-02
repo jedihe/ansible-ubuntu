@@ -4,7 +4,7 @@
   apt:
     state: latest
     update_cache: yes
-    cache_valid_time: {{ aptcachetime }}
+    cache_valid_time: "{{ aptcachetime }}"
     pkg:
       - elementary-sdk
       - libgstreamer1.0-dev

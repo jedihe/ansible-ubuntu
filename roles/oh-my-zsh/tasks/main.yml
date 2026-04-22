@@ -7,7 +7,7 @@
     cache_valid_time: "{{ aptcachetime }}"
     pkg:
       - zsh
-      - netcat
+      - netcat-traditional
   become: yes
 
 - name: Clone Oh my zsh

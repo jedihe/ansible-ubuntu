@@ -32,18 +32,18 @@
 # Adjust configuration file
 - name: Pause to ensure config file exists
   wait_for:
-    path: /home/{{ ansible_env.USER }}/.config/syncthing/config.xml
+    path: /home/{{ ansible_env.USER }}/.local/state/syncthing/config.xml
     delay: 10
 
 - name: Syncthing config.xml - disable browser
   replace:
-    path: /home/{{ ansible_env.USER }}/.config/syncthing/config.xml
+    path: /home/{{ ansible_env.USER }}/.local/state/syncthing/config.xml
     regexp: "<startBrowser>true</startBrowser>"
     replace: "<startBrowser>false</startBrowser>"
 
 - name: Syncthing config.xml - set ui theme
   replace:
-    path: /home/{{ ansible_env.USER }}/.config/syncthing/config.xml
+    path: /home/{{ ansible_env.USER }}/.local/state/syncthing/config.xml
     regexp: "<theme>default</theme>"
     replace: "<theme>dark</theme>"
 

@@ -1,4 +1,11 @@
 ---
 
-- name: Install Slack 
-  apt: deb="https://downloads.slack-edge.com/linux_releases/slack-desktop-4.19.2-amd64.deb"
+#- name: Install Slack 
+#  apt: deb="https://downloads.slack-edge.com/linux_releases/slack-desktop-4.19.2-amd64.deb"
+
+- name: Install the Gnome Calendar Flatpak from the gnome remote system-wide
+  community.general.flatpak:
+    name: com.slack.Slack
+    state: present
+    remote: flathub
+    method: system

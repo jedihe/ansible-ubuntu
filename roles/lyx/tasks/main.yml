@@ -1,7 +1,7 @@
 ---
 
-- name: Add LyX repository
-  apt_repository: repo="ppa:lyx-devel/release" state=present update_cache=yes
+#- name: Add LyX repository
+#  apt_repository: repo="ppa:lyx-devel/release" state=present update_cache=yes
 
 - name: Install LyX
   apt: name=lyx state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

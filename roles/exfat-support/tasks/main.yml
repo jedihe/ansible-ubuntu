@@ -1,8 +1,8 @@
-- name: Install exFAT support
-  apt:
-    state: latest
-    update_cache: yes
-    cache_valid_time: "{{ aptcachetime }}"
-    pkg:
-      - exfat-fuse
-      - exfat-utils
+#- name: Install exFAT support
+#  apt:
+#    state: latest
+#    update_cache: yes
+#    cache_valid_time: "{{ aptcachetime }}"
+#    pkg:
+#      - exfat-fuse
+#      - exfat-utils
